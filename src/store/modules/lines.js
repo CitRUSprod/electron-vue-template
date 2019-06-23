@@ -3,6 +3,7 @@ const state = {
     line2: "Template"
 }
 
+
 export default {
     namespaced: true,
     state

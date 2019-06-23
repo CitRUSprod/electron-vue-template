@@ -12,6 +12,7 @@ const createWindow = (url = null, options = {}) => {
     const isLocalUrl = _.isString(url) && url[0] === "/" || !url
 
     const defaultOptions = {
+        resizable: true,
         maximize: false,
         menu: false,
         waitForReadiness: true,
@@ -48,6 +49,8 @@ const createWindow = (url = null, options = {}) => {
         }
         win.loadURL(isLocalUrl ? `app://.${url || "/index.html"}` : url)
     }
+
+    win.setResizable(opts.resizable)
 
     if (opts.maximize) win.maximize()
 

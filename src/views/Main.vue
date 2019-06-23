@@ -1,4 +1,5 @@
 <template lang="pug">
+
     v-layout.text-xs-center(
         align-center
         justify-center
@@ -8,12 +9,16 @@
         v-flex(xs12)
             .display-3 {{ line1 }}
             .display-2 {{ line2 }}
+
 </template>
 
+
 <script>
+
     export default {
         computed: {
-            ...vpGet("lines", ["line1", "line2"])
+            ...vp.get("lines", ["line1", "line2"])
         }
     }
+    
 </script>

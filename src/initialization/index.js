@@ -48,5 +48,8 @@ if (dev) {
 }
 
 
-export { createWindow }
-export default { createWindow }
+const isDev = dev
+
+
+export { createWindow, isDev }
+export default { createWindow, isDev }
