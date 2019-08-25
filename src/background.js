@@ -10,7 +10,7 @@ let win
 
 
 const createMainWindow = async () => {
-    win = await createWindow()
+    win = await createWindow("/index.html")
     win.on("closed", () => {
         win = null
     })

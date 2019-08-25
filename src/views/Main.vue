@@ -1,6 +1,6 @@
 <template lang="pug">
 
-    v-layout.text-xs-center(
+    v-layout.text-center(
         align-center
         justify-center
         fill-height
