@@ -15,6 +15,6 @@ new Vue({
     vuetify,
     render: h => h(App),
     mounted() {
-        this.$router.push("/")
+        this.$router.push("/").catch(() => {})
     }
 }).$mount("#app")

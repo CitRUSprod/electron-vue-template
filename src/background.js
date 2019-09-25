@@ -6,20 +6,15 @@ import { createWindow } from "./initialization"
 app.setName("Electron Vue Template")
 
 
-let win
+let mainWindow
 
 
 const createMainWindow = async () => {
-    win = await createWindow("/index.html")
-    win.on("closed", () => {
-        win = null
+    mainWindow = await createWindow("/index.html")
+    mainWindow.on("closed", () => {
+        mainWindow = null
     })
 }
-
-
-app.on("activate", () => {
-    if (win === null) createMainWindow()
-})
 
 
 app.on("ready", async () => {
