@@ -7,7 +7,7 @@
 ```bash
 $ git clone https://github.com/CitRUSprod/electron-vue-template.git my-project
 $ cd my-project && rm -rf .git README.md LICENSE
-$ yarn # OR npm i
+$ yarn
 ```
 
 ## Usage
@@ -16,12 +16,12 @@ $ yarn # OR npm i
 
 ```bash
 # development with HMR
-$ yarn dev # OR npm run dev
+$ yarn dev
 ```
 
 ### Build
 
 ```bash
 # build for production using electron-builder
-$ yarn build # OR npm run build
+$ yarn build
 ```

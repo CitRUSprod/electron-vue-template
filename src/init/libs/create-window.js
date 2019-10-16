@@ -17,10 +17,6 @@ const createWindow = (url = null, options = {}) => {
         menu: false,
         waitForReadiness: true,
         bw: {
-            minWidth: 800,
-            minHeight: 600,
-            width: 800,
-            height: 600,
             icon: path.join(__static, "icon.png"),
             webPreferences: {
                 nodeIntegration: isLocalUrl
@@ -37,7 +33,7 @@ const createWindow = (url = null, options = {}) => {
     if (_.isArray(opts.menu)) {
         win.setMenu(Menu.buildFromTemplate(opts.menu))
     } else if (!opts.menu) {
-        win.setMenu(null)
+        win.removeMenu()
     }
 
     if (process.env.WEBPACK_DEV_SERVER_URL) {

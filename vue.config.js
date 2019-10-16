@@ -6,7 +6,8 @@ module.exports = {
         plugins: [
             new ProvidePlugin({
                 _: "lodash",
-                vp: "vuex-pathify"
+                vp: "vuex-pathify",
+                msgRequest: ["@/init/renderer", "msgRequest"]
             })
         ]
     },
@@ -20,9 +21,6 @@ module.exports = {
                     icon: "public/icon.png"
                 },
                 linux: {
-                    icon: "public/icon.png"
-                },
-                mac: {
                     icon: "public/icon.png"
                 }
             }

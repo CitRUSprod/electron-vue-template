@@ -2,9 +2,6 @@ import { app, BrowserWindow } from "electron"
 import localShortcut from "electron-localshortcut"
 
 
-const isMacOS = process.platform === "darwin"
-
-
 const toggleDevTools = (win = BrowserWindow.getFocusedWindow()) => {
 	if (win) {
 		if (win.webContents.isDevToolsOpened()) {
@@ -40,10 +37,10 @@ const debug = () => {
 	})
 
 	app.on("ready", () => {
-		localShortcut.register(isMacOS ? "Command+Alt+I" : "Control+Shift+I", devTools)
+		localShortcut.register("Control+Shift+I", devTools)
 		localShortcut.register("F12", devTools)
 
-		localShortcut.register("CommandOrControl+R", refresh)
+		localShortcut.register("Control+R", refresh)
 		localShortcut.register("F5", refresh)
 	})
 	

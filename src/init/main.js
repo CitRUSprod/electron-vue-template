@@ -1,13 +1,13 @@
-const dev = process.env.NODE_ENV !== "production"
-
-
 import { app, protocol } from "electron"
 import { installVueDevtools } from "vue-cli-plugin-electron-builder/lib"
 
-import createWindow from "./create-window"
+import isDev from "./libs/is-dev"
+import createWindow from "./libs/create-window"
+import { msgServe } from "./libs/messenger"
+import createStorage from "./libs/create-storage"
 
 
-if (dev) require("./debug").default()
+if (isDev) require("./libs/debug").default()
 
 
 protocol.registerSchemesAsPrivileged([{
@@ -20,7 +20,7 @@ protocol.registerSchemesAsPrivileged([{
 
 
 app.on("ready", async () => {
-    if (dev && !process.env.IS_TEST) {
+    if (isDev && !process.env.IS_TEST) {
         try {
             await installVueDevtools()
         } catch (err) {
@@ -35,7 +35,7 @@ app.on("window-all-closed", () => {
 })
 
 
-if (dev) {
+if (isDev) {
     if (process.platform === "win32") {
         process.on("message", data => {
             if (data === "graceful-exit") app.quit()
@@ -48,8 +48,5 @@ if (dev) {
 }
 
 
-const isDev = dev
-
-
-export { createWindow, isDev }
-export default { createWindow, isDev }
+export { isDev, createWindow, createStorage, msgServe }
+export default { isDev, createWindow, createStorage, msgServe }
