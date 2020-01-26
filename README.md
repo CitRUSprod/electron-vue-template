@@ -1,5 +1,7 @@
 # Electron Vue Template (EVT)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/CitRUSprod/electron-vue-template.svg)](https://greenkeeper.io/)
+
 > Create a Electron+Vue project in seconds
 
 ## Installation:
